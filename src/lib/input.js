@@ -36,6 +36,7 @@ function Input(props) {
             //Modal(searchedText);
         }
         else if (searchedText.length <= 3) {
+            setInput(null);
             setBooks(null);
         }
     };
