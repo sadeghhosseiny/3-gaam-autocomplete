@@ -1,0 +1,35 @@
+.input {
+  width: 34%;
+  font-size: 17px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  border: 3px solid rgb(68, 64, 64);
+  outline: none;
+  border-radius: 6px;
+}
+
+/* input[type="text"]:focus {
+  border: 3px solid #555;
+} */
+
+.bottomInput {
+  width: 34%;
+  font-size: 17px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  border: 3px solid rgb(68, 64, 64);
+  outline: none;
+  border-radius: 6px;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* .form {
+  margin-top: 10px;
+  border-radius: 10px;
+} */
