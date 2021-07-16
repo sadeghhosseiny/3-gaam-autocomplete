@@ -3,20 +3,19 @@ import './modal.css';
 
 function Modal(props) {
 
-    const [openModal, setOpenModal] = useState(false);
-
     const text = props.text;
-    //console.log("TE", text);
+    console.log("TE", text);
     const books = props.data;
-    // console.log(books);
+    console.log("BBB", books);
 
     const renderModal = () => {
         return (
             //setOpenModal(!openModal),
             <div>
-                {books ? books.slice(0, 5).map(book => (
-                    <div className="books-div">
-                        <p key={book.id}>{book.volumeInfo.title}</p>
+                {books ? books.filter(book => book.volumeInfo.title.toLowerCase().includes(text.toLowerCase())).slice(0, 5).map(book => (
+
+                    <div key={book.id} className="books-div">
+                        <p >{book.volumeInfo.title}</p>
                     </div>
                 )) : ""}
             </div>
@@ -25,22 +24,11 @@ function Modal(props) {
         );
     };
 
-    const test = () => {
-        if (text) {
-            console.log("yep");
-        }
-        else {
-            console.log("nop");
-        }
-    };
-
-
-
 
     return (
-        <div className={`${text ? "mainDiv" : null}`}>
+        <div className={`${text.length > 3 ? "mainDiv" : null}`}>
             {text && renderModal()}
-            {test()}
+
         </div>
     );
 }
