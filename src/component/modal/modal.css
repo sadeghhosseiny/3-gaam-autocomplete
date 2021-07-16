@@ -3,7 +3,7 @@
   border-top: 1px solid rgb(68, 64, 64);
   margin-left: 33.85%;
   margin-right: 33.85%;
-  display: flex;
+  /* display: flex; */
   border-bottom-right-radius: 6px;
   width: 32%;
   border-bottom-left-radius: 6px;
@@ -30,7 +30,7 @@
   margin-top: 10px;
 }
 
-.dividerLine:last-child a {
+hr:nth-last-child() {
   background-color: red;
   color: red;
   border: 2px solid red;

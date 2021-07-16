@@ -18,7 +18,7 @@ function Modal(props) {
 
                         <div key={book.id} className="books-div">
                             <Book title={book.volumeInfo.title} author={book.volumeInfo.authors} />
-                            {<hr className="dividerLine" />}
+                            {(index !== i.length - 1) && <hr className="dividerLine" />}
                             {console.log("BK length", book.volumeInfo.length)}
                             {console.log("IND", i.length, index)}
                             {/* <hr className="dividerLine" /> */}
