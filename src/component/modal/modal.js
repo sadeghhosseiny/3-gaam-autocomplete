@@ -9,24 +9,47 @@ function Modal(props) {
     const books = props.data;
     console.log("BBB", books);
 
+    const filterdNames = books.filter(book => (
+        book.volumeInfo.title.toLowerCase().includes(text.toLowerCase())
+    ));
+
     const renderModal = () => {
+
         return (
-            //setOpenModal(!openModal),
             <div>
                 {books ? books.filter(book => book.volumeInfo.title.toLowerCase().
-                    includes(text.toLowerCase())).slice(0, 5).map((book, index, i) => (
+                    includes(text.toLowerCase())).slice(0, 5).map((book, index, i) => {
 
-                        <div key={book.id} className="books-div">
-                            <Book title={book.volumeInfo.title} author={book.volumeInfo.authors} />
-                            {(index !== i.length - 1) && <hr className="dividerLine" />}
-                            {console.log("BK length", book.volumeInfo.length)}
-                            {console.log("IND", i.length, index)}
-                            {/* <hr className="dividerLine" /> */}
-                        </div>
-                    )) : "no match"}
+                        let patt = new RegExp(text.toLowerCase, "gi");
+                        let result = book.volumeInfo.title.matchAll(patt);
+                        for (let res of result) {
+                            console.log("hi");
+                            console.log(res);
+                        }
+                        let string = book.volumeInfo.title.substr(
+                            0,
+                            book.volumeInfo.title.toLowerCase().indexOf(text.toLowerCase())
+                        );
+                        let endString = book.volumeInfo.title.substr(
+                            book.volumeInfo.title.toLowerCase().indexOf(text.toLowerCase()) +
+                            text.length
+                        );
+                        let highlightedText = book.volumeInfo.title.substr(
+                            book.volumeInfo.title.toLowerCase().indexOf(text.toLowerCase()),
+                            text.length
+                        );
+
+                        return (
+                            <div key={book.id} className="books-div">
+
+                                <Book string={string} highlightedText={highlightedText} endString={endString} author={book.volumeInfo.authors} />
+
+                                {(index !== i.length - 1) && <hr className="dividerLine" />}
+                            </div>
+                        );
+                    }) : "no match"}
+
             </div>
-            //setOpenModal(false)
-
         );
     };
 
@@ -36,6 +59,39 @@ function Modal(props) {
 
         <div className={`${text.length > 3 ? "mainDiv" : null}`}>
             {text && renderModal()}
+            {/* {text ? (
+                <ul className="lookup-results">
+                    {filterdNames.map((value) => {
+                        let patt = new RegExp(text.toLowerCase, "gi");
+                        let result = value.volumeInfo.title.matchAll(patt);
+                        for (let res of result) {
+                            console.log("hi");
+                            console.log(res);
+                        }
+                        let string = value.volumeInfo.title.substr(
+                            0,
+                            value.volumeInfo.title.toLowerCase().indexOf(text.toLowerCase())
+                        );
+                        let endString = value.volumeInfo.title.substr(
+                            value.volumeInfo.title.toLowerCase().indexOf(text.toLowerCase()) +
+                            text.length
+                        );
+                        let highlightedText = value.volumeInfo.title.substr(
+                            value.volumeInfo.title.toLowerCase().indexOf(text.toLowerCase()),
+                            text.length
+                        );
+                        return (
+                            <li key={value.volumeInfo.title}>
+                                {string}
+                                <span style={{ "background-color": "#FFFF00" }}>
+                                    {highlightedText}
+                                </span>
+                                {endString}
+                            </li>
+                        );
+                    })}
+                </ul>
+            ) : null} */}
 
         </div>
         // </div>

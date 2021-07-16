@@ -1,10 +1,16 @@
 import React from 'react';
 
-function Book({ title, author }) {
+function Book({ string, highlightedText, endString, author }) {
 
     return (
         <>
-            <h3>{title}</h3>
+            <h4>
+                {string}
+                <span style={{ fontWeight: "bolder" }}>
+                    {highlightedText}
+                </span>
+                {endString}
+            </h4>
             <p>{author}</p>
         </>
     );
