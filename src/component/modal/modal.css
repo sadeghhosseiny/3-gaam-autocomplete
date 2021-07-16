@@ -1,0 +1,37 @@
+.mainDiv {
+  border: 3px solid rgb(68, 64, 64);
+  border-top: 1px solid rgb(68, 64, 64);
+  margin-left: 33.85%;
+  margin-right: 33.85%;
+  display: flex;
+  border-bottom-right-radius: 6px;
+  width: 32%;
+  border-bottom-left-radius: 6px;
+  /* min-width: 350px; */
+}
+
+.books-div {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  /* margin-left: -357px; */
+  flex-direction: column;
+  /* margin-right: 28%; */
+  align-items: flex-start;
+  margin-left: 45px;
+}
+
+.dividerLine {
+  width: 90%;
+  background-color: black;
+  height: 1px;
+  border: 1px solid;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.dividerLine:last-child a {
+  background-color: red;
+  color: red;
+  border: 2px solid red;
+}

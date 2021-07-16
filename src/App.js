@@ -1,6 +1,5 @@
 import './App.css';
-import Input from './lib/input';
-import HomeScreen from './pages/HomeScreen';
+import HomeScreen from './pages/HomeScreen/HomeScreen';
 
 function App() {
   return (

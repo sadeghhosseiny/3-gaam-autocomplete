@@ -46,17 +46,25 @@
   position: relative;
   display: inline-flex;
   border: 3px solid rgb(68, 64, 64);
+  margin-top: 20px;
   border-radius: 6px;
   overflow: hidden;
+  margin-left: 33.85%;
+  margin-right: 33.85%;
+  /* min-width: 350px; */
 }
 
 .searchContainerBottom {
+  /* min-width: 350px; */
   width: 32%;
+  margin-left: 33.85%;
+  margin-right: 33.85%;
   position: relative;
   display: inline-flex;
   border: 3px solid rgb(68, 64, 64);
   border-radius: 6px;
   overflow: hidden;
+  margin-top: 20px;
   border-bottom: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
