@@ -1,11 +1,12 @@
 .mainDiv {
   border: 3px solid rgb(68, 64, 64);
   border-top: 1px solid rgb(68, 64, 64);
-  margin-left: 33.85%;
-  margin-right: 33.85%;
+  margin-left: auto;
+  margin-right: auto;
   /* display: flex; */
   border-bottom-right-radius: 6px;
-  width: 32%;
+  width: 90%;
+  max-width: 500px;
   border-bottom-left-radius: 6px;
   /* min-width: 350px; */
 }
@@ -28,10 +29,4 @@
   border: 1px solid;
   border-radius: 20px;
   margin-top: 10px;
-}
-
-hr:nth-last-child() {
-  background-color: red;
-  color: red;
-  border: 2px solid red;
 }

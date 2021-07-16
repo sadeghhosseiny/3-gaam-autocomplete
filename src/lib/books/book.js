@@ -10,6 +10,7 @@ function Book({ string, highlightedText, endString, author }) {
                     {highlightedText}
                 </span>
                 {endString}
+
             </h4>
             <p>{author}</p>
         </>

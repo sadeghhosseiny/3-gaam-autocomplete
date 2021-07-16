@@ -1,15 +1,21 @@
-import React from 'react';
 import axios from 'axios';
 
-const getRequest = (props) => {
+const getRequest = (props, cancelRef) => {
     const value = props;
-    console.log("this is props", value);
     return axios
         .get(
             `https://www.googleapis.com/books/v1/volumes?country=US&projection=lite&printType=books&key=AIzaSyD6SlU9JUr7Z-3SOOy0TfZTJtqv_EEqfZY&q=intitle:${value}&startIndex=0&maxResults=10`,
-        )
+
+            {
+                cancelToken: new axios.CancelToken(function executor(c) {
+                    // An executor function receives a cancel function as a parameter
+                    cancelRef.current = c;
+                }),
+            })
         .then((res) => res.data.items)
         .catch((err) => console.log(err.message));
+
+
 
 };
 
