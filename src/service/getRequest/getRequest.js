@@ -8,7 +8,6 @@ const getRequest = (props, cancelRef) => {
 
             {
                 cancelToken: new axios.CancelToken(function executor(c) {
-                    // An executor function receives a cancel function as a parameter
                     cancelRef.current = c;
                 }),
             })

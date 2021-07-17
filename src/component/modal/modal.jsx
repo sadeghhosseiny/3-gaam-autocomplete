@@ -5,9 +5,7 @@ import './modal.css';
 function Modal(props) {
 
     const text = props.text;
-    // console.log("TE", text);
     const books = props.data;
-    // console.log("BBB", books);
 
     const renderModal = () => {
 
@@ -54,13 +52,11 @@ function Modal(props) {
 
 
     return (
-        // <div className="container">
 
-        <div className={`${text.length > 0 ? "mainDiv" : null}`}>
+        <div className={`${text ? "mainDiv" : null}`}>
             {text && renderModal()}
 
         </div>
-        // </div>
     );
 }
 

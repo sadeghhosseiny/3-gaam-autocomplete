@@ -20,27 +20,6 @@
   font-size: 20px;
 }
 
-/* input[type="text"]:focus {
-  border: 3px solid #555;
-} */
-
-/* .bottomInput {
-  width: 92%;
-  position: relative;
-  font-size: 17px;
-  padding: 10px 2px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 44px;
-  box-sizing: border-box;
-  border: none;
-  outline: none;
-  border-radius: 6px;
-  border-bottom: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-} */
-
 .searchContainer {
   width: 90%;
   max-width: 500px;
@@ -52,7 +31,6 @@
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
-  /* min-width: 350px; */
 }
 
 .searchContainerBottom {

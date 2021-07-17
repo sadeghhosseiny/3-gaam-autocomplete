@@ -19,16 +19,19 @@ function HomeScreen() {
 
     const handleInputChange = (e) => {
         clearTimeout(typingTimeout);
-        if (cancelRef.current) cancelRef.current();
 
         setTypingTimeout(setTimeout(() => {
+            if (cancelRef.current) cancelRef.current();
             const searchedText = e.target.value.toLowerCase().trim();
+            if (searchedText.length > 3) {
 
-            setInputValue(searchedText);
-            handleFetchBooks(searchedText);
+                setInputValue(searchedText);
+                handleFetchBooks(searchedText);
+            }
+            else if (searchedText.length <= 3) {
 
-
-            // setInputValue('');
+                setInputValue('');
+            }
 
         }, 1000));
     };
@@ -39,7 +42,7 @@ function HomeScreen() {
     return (
         <div>
             <Input
-                onChange={handleInputChange} className={`${inputValue.length > 0 ? "searchContainerBottom" : "searchContainer"}`} />
+                onChange={handleInputChange} className={`${inputValue.length > 3 ? "searchContainerBottom" : "searchContainer"}`} />
             <Modal text={inputValue} data={books} />
         </div>
     );
