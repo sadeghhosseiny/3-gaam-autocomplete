@@ -14,14 +14,15 @@ function HomeScreen() {
     const handleFetchBooks = async (value) => {
         const resultItems = await FetchBooks(value, cancelRef);
         setBooks(resultItems);
-        console.log(resultItems);
     };
 
     const handleInputChange = (e) => {
         clearTimeout(typingTimeout);
 
         setTypingTimeout(setTimeout(() => {
-            if (cancelRef.current) cancelRef.current();
+            if (cancelRef.current) {
+                cancelRef.current();
+            }
             const searchedText = e.target.value.toLowerCase().trim();
             if (searchedText.length > 3) {
 
