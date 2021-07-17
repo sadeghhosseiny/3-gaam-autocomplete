@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import Modal from '../../component/modal/modal';
-import Input from '../../lib/input/input';
-import FetchBooks from '../../service/getRequest/getRequest';
+import Modal from '../../component/modal';
+import Input from '../../lib/input';
+import FetchBooks from '../../service/getRequest';
 
 function HomeScreen() {
 

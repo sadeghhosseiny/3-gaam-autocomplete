@@ -1,5 +1,5 @@
 import React from 'react';
-import Book from '../../lib/books/book';
+import Book from '../../lib/books';
 import './modal.css';
 
 function Modal(props) {
